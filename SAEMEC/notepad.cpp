@@ -42,7 +42,10 @@ void Notepad::on_actionOpen_triggered()
 void Notepad::on_actionSave_triggered()
 {
     if (currentFile.isEmpty()) {
-        QString fileName = QFileDialog::getSaveFileName(this, "Save your file as");
+        QString fileName = QFileDialog::getSaveFileName(this,
+                                                        tr("Save your file as"),
+                                                        R"(Z:\C++\SAE\SAEMEC)",
+                                                        tr("Text files (*.txt);;HTML files (*html)"));
         QFile file(fileName);
         if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
             return;
