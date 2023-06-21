@@ -97,41 +97,20 @@ void Notepad::on_actionExit_triggered()
 }
 
 
-void Notepad::on_actionCopy_triggered()
-{
-    ui->textEdit->copy();
-}
+void Notepad::on_actionCopy_triggered() { ui->textEdit->copy(); }
 
+void Notepad::on_actionPaste_triggered() { ui->textEdit->paste(); }
 
-void Notepad::on_actionPaste_triggered()
-{
-    ui->textEdit->paste();
-}
+void Notepad::on_actionCut_triggered() { ui->textEdit->cut(); }
 
+void Notepad::on_actionUndo_triggered() { ui->textEdit->undo(); }
 
-void Notepad::on_actionCut_triggered()
-{
-    ui->textEdit->cut();
-}
-
-
-void Notepad::on_actionUndo_triggered()
-{
-    ui->textEdit->undo();
-}
-
-
-void Notepad::on_actionRedo_triggered()
-{
-    ui->textEdit->redo();
-}
+void Notepad::on_actionRedo_triggered() { ui->textEdit->redo(); }
 
 void Notepad::on_actionColor_triggered()
 {
     QColor col = QColorDialog::getColor(Qt::white, this, "Select a color");
-    QPalette pal = ui->textEdit->palette();
-    pal.setColor(QPalette::HighlightedText, col);
-    ui->textEdit->setPalette(pal);
+    ui->textEdit->setTextColor(col);
 }
 
 void Notepad::on_actionBold_toggled(bool arg1)
@@ -143,16 +122,9 @@ void Notepad::on_actionBold_toggled(bool arg1)
 }
 
 
-void Notepad::on_actionUnderline_triggered()
-{
-    ui->textEdit->setFontUnderline(!ui->textEdit->fontUnderline());
-}
+void Notepad::on_actionUnderline_triggered() { ui->textEdit->setFontUnderline(!ui->textEdit->fontUnderline()); }
 
-
-void Notepad::on_actionItalic_triggered()
-{
-    ui->textEdit->setFontItalic(!ui->textEdit->fontItalic());
-}
+void Notepad::on_actionItalic_triggered() { ui->textEdit->setFontItalic(!ui->textEdit->fontItalic()); }
 
 void Notepad::on_actionSelect_Font_2_triggered()
 {
@@ -161,7 +133,6 @@ void Notepad::on_actionSelect_Font_2_triggered()
     if (fontSelected)
         ui->textEdit->setCurrentFont(font);
 }
-
 
 
 void Notepad::on_actionInfo_triggered()
