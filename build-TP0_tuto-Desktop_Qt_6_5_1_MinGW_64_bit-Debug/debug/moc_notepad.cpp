@@ -60,11 +60,12 @@ static constexpr auto qt_meta_stringdata_CLASSNotepadENDCLASS = QtMocHelpers::st
     "on_actionAlign_Center_triggered",
     "on_actionAlign_Right_triggered",
     "on_actionAlign_Justify_triggered",
-    "on_actionInfo_triggered"
+    "on_actionInfo_triggered",
+    "on_actionFont_size_triggered"
 );
 #else  // !QT_MOC_HAS_STRING_DATA
 struct qt_meta_stringdata_CLASSNotepadENDCLASS_t {
-    uint offsetsAndSizes[44];
+    uint offsetsAndSizes[46];
     char stringdata0[8];
     char stringdata1[23];
     char stringdata2[1];
@@ -87,6 +88,7 @@ struct qt_meta_stringdata_CLASSNotepadENDCLASS_t {
     char stringdata19[31];
     char stringdata20[33];
     char stringdata21[24];
+    char stringdata22[29];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_CLASSNotepadENDCLASS_t::offsetsAndSizes) + ofs), len 
@@ -113,7 +115,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSNotepadENDCLASS_t qt_meta_strin
         QT_MOC_LITERAL(394, 31),  // "on_actionAlign_Center_triggered"
         QT_MOC_LITERAL(426, 30),  // "on_actionAlign_Right_triggered"
         QT_MOC_LITERAL(457, 32),  // "on_actionAlign_Justify_triggered"
-        QT_MOC_LITERAL(490, 23)   // "on_actionInfo_triggered"
+        QT_MOC_LITERAL(490, 23),  // "on_actionInfo_triggered"
+        QT_MOC_LITERAL(514, 28)   // "on_actionFont_size_triggered"
     },
     "Notepad",
     "on_actionNew_triggered",
@@ -136,7 +139,8 @@ Q_CONSTINIT static const qt_meta_stringdata_CLASSNotepadENDCLASS_t qt_meta_strin
     "on_actionAlign_Center_triggered",
     "on_actionAlign_Right_triggered",
     "on_actionAlign_Justify_triggered",
-    "on_actionInfo_triggered"
+    "on_actionInfo_triggered",
+    "on_actionFont_size_triggered"
 };
 #undef QT_MOC_LITERAL
 #endif // !QT_MOC_HAS_STRING_DATA
@@ -148,7 +152,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNotepadENDCLASS[] = {
       11,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   14, // methods
+      20,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -156,25 +160,26 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNotepadENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  128,    2, 0x08,    1 /* Private */,
-       3,    0,  129,    2, 0x08,    2 /* Private */,
-       4,    0,  130,    2, 0x08,    3 /* Private */,
-       5,    0,  131,    2, 0x08,    4 /* Private */,
-       6,    0,  132,    2, 0x08,    5 /* Private */,
-       7,    0,  133,    2, 0x08,    6 /* Private */,
-       8,    0,  134,    2, 0x08,    7 /* Private */,
-       9,    0,  135,    2, 0x08,    8 /* Private */,
-      10,    0,  136,    2, 0x08,    9 /* Private */,
-      11,    0,  137,    2, 0x08,   10 /* Private */,
-      12,    1,  138,    2, 0x08,   11 /* Private */,
-      14,    0,  141,    2, 0x08,   13 /* Private */,
-      15,    0,  142,    2, 0x08,   14 /* Private */,
-      16,    0,  143,    2, 0x08,   15 /* Private */,
-      17,    0,  144,    2, 0x08,   16 /* Private */,
-      18,    0,  145,    2, 0x08,   17 /* Private */,
-      19,    0,  146,    2, 0x08,   18 /* Private */,
-      20,    0,  147,    2, 0x08,   19 /* Private */,
-      21,    0,  148,    2, 0x08,   20 /* Private */,
+       1,    0,  134,    2, 0x08,    1 /* Private */,
+       3,    0,  135,    2, 0x08,    2 /* Private */,
+       4,    0,  136,    2, 0x08,    3 /* Private */,
+       5,    0,  137,    2, 0x08,    4 /* Private */,
+       6,    0,  138,    2, 0x08,    5 /* Private */,
+       7,    0,  139,    2, 0x08,    6 /* Private */,
+       8,    0,  140,    2, 0x08,    7 /* Private */,
+       9,    0,  141,    2, 0x08,    8 /* Private */,
+      10,    0,  142,    2, 0x08,    9 /* Private */,
+      11,    0,  143,    2, 0x08,   10 /* Private */,
+      12,    1,  144,    2, 0x08,   11 /* Private */,
+      14,    0,  147,    2, 0x08,   13 /* Private */,
+      15,    0,  148,    2, 0x08,   14 /* Private */,
+      16,    0,  149,    2, 0x08,   15 /* Private */,
+      17,    0,  150,    2, 0x08,   16 /* Private */,
+      18,    0,  151,    2, 0x08,   17 /* Private */,
+      19,    0,  152,    2, 0x08,   18 /* Private */,
+      20,    0,  153,    2, 0x08,   19 /* Private */,
+      21,    0,  154,    2, 0x08,   20 /* Private */,
+      22,    0,  155,    2, 0x08,   21 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -188,6 +193,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSNotepadENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,   13,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -247,6 +253,8 @@ Q_CONSTINIT const QMetaObject Notepad::staticMetaObject = { {
         // method 'on_actionAlign_Justify_triggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_actionInfo_triggered'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_actionFont_size_triggered'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -277,6 +285,7 @@ void Notepad::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 16: _t->on_actionAlign_Right_triggered(); break;
         case 17: _t->on_actionAlign_Justify_triggered(); break;
         case 18: _t->on_actionInfo_triggered(); break;
+        case 19: _t->on_actionFont_size_triggered(); break;
         default: ;
         }
     }
@@ -301,13 +310,13 @@ int Notepad::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 20;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 20)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 19;
+        _id -= 20;
     }
     return _id;
 }

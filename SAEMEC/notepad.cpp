@@ -1,8 +1,11 @@
-#include "notepad.h"
-#include "ui_notepad.h"
+#include <iostream>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QFontDialog>
+#include "customcombobox.h"
+#include "notepad.h"
+#include "ui_notepad.h"
+
 
 Notepad::Notepad(QWidget *parent):
     QMainWindow(parent), ui(new Ui::Notepad)
@@ -189,14 +192,35 @@ void Notepad::on_actionAlign_Justify_triggered()
 void Notepad::on_actionInfo_triggered()
 {
     QMessageBox::StandardButton btn;
-        btn = QMessageBox::information(this,
-                                       tr("About MDI"),
-                                       tr("The Notepad exemple demonstrates "
-                                          "how to code a basic text editor "
-                                          "using QtWidgets"),
-                                       QMessageBox::Ok,
-                                       QMessageBox::NoButton);
-        if (btn == QMessageBox::Ok)
-            qDebug() << "OK";
+    btn = QMessageBox::information(this,
+                                   tr("About MDI"),
+                                   tr("The Notepad exemple demonstrates "
+                                      "how to code a basic text editor "
+                                      "using QtWidgets"),
+                                   QMessageBox::Ok | QMessageBox::Cancel,
+                                   QMessageBox::NoButton);
+    if (btn == QMessageBox::Ok) {
+        qDebug() << "OK";
+    }
+    else if (btn == QMessageBox::Cancel) {
+        qDebug() << "Cancel";
+    }
+}
+
+
+void Notepad::on_actionFont_size_triggered()
+{
+    QMessageBox msgBox;
+    QSpinBox* b = new QSpinBox();
+    b->setRange(1, 50);
+    b->setDisplayIntegerBase(11);
+    if (msgBox.layout())
+        msgBox.layout()->addWidget(b);
+    msgBox.setText("Select a font size");
+    msgBox.exec();
+
+    int value = b->value();
+    delete b;
+    ui->textEdit->setFontPointSize(value);
 }
 

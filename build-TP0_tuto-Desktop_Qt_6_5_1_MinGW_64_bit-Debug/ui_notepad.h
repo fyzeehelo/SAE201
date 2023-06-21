@@ -46,6 +46,7 @@ public:
     QAction *actionAlign_Right;
     QAction *actionAlign_Justify;
     QAction *actionInfo;
+    QAction *actionFont_size;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QTextEdit *textEdit;
@@ -160,6 +161,8 @@ public:
         actionAlign_Justify->setIcon(icon17);
         actionInfo = new QAction(Notepad);
         actionInfo->setObjectName("actionInfo");
+        actionFont_size = new QAction(Notepad);
+        actionFont_size->setObjectName("actionFont_size");
         centralwidget = new QWidget(Notepad);
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -172,7 +175,7 @@ public:
         Notepad->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Notepad);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 800, 25));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         menuEdit = new QMenu(menubar);
@@ -214,6 +217,8 @@ public:
         menuFont->addAction(actionBold);
         menuFont->addAction(actionUnderline);
         menuFont->addAction(actionItalic);
+        menuFont->addSeparator();
+        menuFont->addAction(actionFont_size);
         menuAbout->addAction(actionInfo);
         toolBar->addAction(actionUndo);
         toolBar->addAction(actionRedo);
@@ -297,6 +302,7 @@ public:
         actionAlign_Justify->setToolTip(QCoreApplication::translate("Notepad", "Justify", nullptr));
 #endif // QT_CONFIG(tooltip)
         actionInfo->setText(QCoreApplication::translate("Notepad", "Info", nullptr));
+        actionFont_size->setText(QCoreApplication::translate("Notepad", "Font size", nullptr));
         menuFile->setTitle(QCoreApplication::translate("Notepad", "&File", nullptr));
         menuEdit->setTitle(QCoreApplication::translate("Notepad", "Edit", nullptr));
         menuFont->setTitle(QCoreApplication::translate("Notepad", "Font", nullptr));

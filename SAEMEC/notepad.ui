@@ -26,7 +26,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -52,6 +52,8 @@
      <addaction name="actionBold"/>
      <addaction name="actionUnderline"/>
      <addaction name="actionItalic"/>
+     <addaction name="separator"/>
+     <addaction name="actionFont_size"/>
     </widget>
     <addaction name="actionColor"/>
     <addaction name="menuFont"/>
@@ -323,6 +325,11 @@
   <action name="actionInfo">
    <property name="text">
     <string>Info</string>
+   </property>
+  </action>
+  <action name="actionFont_size">
+   <property name="text">
+    <string>Font size</string>
    </property>
   </action>
  </widget>

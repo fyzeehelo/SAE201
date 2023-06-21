@@ -40,5 +40,6 @@ private slots:
     void on_actionAlign_Right_triggered();
     void on_actionAlign_Justify_triggered();
     void on_actionInfo_triggered();
+    void on_actionFont_size_triggered();
 };
 #endif // NOTEPAD_H
