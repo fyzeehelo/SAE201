@@ -104,6 +104,7 @@
    <addaction name="actionPaste"/>
    <addaction name="separator"/>
    <addaction name="actionSelect_Font"/>
+   <addaction name="actionFont_size"/>
    <addaction name="actionBold"/>
    <addaction name="actionUnderline"/>
    <addaction name="actionItalic"/>
@@ -323,11 +324,19 @@
    </property>
   </action>
   <action name="actionInfo">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/info.png</normaloff>:/Icones/Img/info.png</iconset>
+   </property>
    <property name="text">
     <string>Info</string>
    </property>
   </action>
   <action name="actionFont_size">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/font-size.png</normaloff>:/Icones/Img/font-size.png</iconset>
+   </property>
    <property name="text">
     <string>Font size</string>
    </property>

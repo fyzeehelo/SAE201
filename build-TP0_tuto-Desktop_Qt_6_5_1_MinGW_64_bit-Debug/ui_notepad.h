@@ -161,8 +161,14 @@ public:
         actionAlign_Justify->setIcon(icon17);
         actionInfo = new QAction(Notepad);
         actionInfo->setObjectName("actionInfo");
+        QIcon icon18;
+        icon18.addFile(QString::fromUtf8(":/Icones/Img/info.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionInfo->setIcon(icon18);
         actionFont_size = new QAction(Notepad);
         actionFont_size->setObjectName("actionFont_size");
+        QIcon icon19;
+        icon19.addFile(QString::fromUtf8(":/Icones/Img/font-size.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionFont_size->setIcon(icon19);
         centralwidget = new QWidget(Notepad);
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -232,6 +238,7 @@ public:
         toolBar->addAction(actionPaste);
         toolBar->addSeparator();
         toolBar->addAction(actionSelect_Font);
+        toolBar->addAction(actionFont_size);
         toolBar->addAction(actionBold);
         toolBar->addAction(actionUnderline);
         toolBar->addAction(actionItalic);

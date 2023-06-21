@@ -2,7 +2,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QFontDialog>
-#include "customcombobox.h"
+#include <QSpinBox>
 #include "notepad.h"
 #include "ui_notepad.h"
 
