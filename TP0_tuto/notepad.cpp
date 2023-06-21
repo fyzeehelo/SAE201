@@ -82,7 +82,18 @@ void Notepad::on_actionSave_As_triggered()
 
 void Notepad::on_actionExit_triggered()
 {
-    close();
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this,
+                                  "Exit app",
+                                  "Are you sure you want quit ?\n"
+                                  "Save your work before quit or it will be delete",
+                                  QMessageBox::Yes|QMessageBox::No);
+    if (reply == QMessageBox::Yes) {
+        qDebug() << "Yes";
+        QApplication::quit();
+    } else {
+        qDebug() << "No";
+    }
 }
 
 
@@ -119,7 +130,7 @@ void Notepad::on_actionColor_triggered()
 {
     QColor col = QColorDialog::getColor(Qt::white, this, "Select a color");
     QPalette pal = ui->textEdit->palette();
-    pal.setColor(QPalette::Text, col);
+    pal.setColor(QPalette::HighlightedText, col);
     ui->textEdit->setPalette(pal);
 }
 
@@ -143,9 +154,6 @@ void Notepad::on_actionItalic_triggered()
     ui->textEdit->setFontItalic(!ui->textEdit->fontItalic());
 }
 
-
-
-
 void Notepad::on_actionSelect_Font_2_triggered()
 {
     bool fontSelected;
@@ -154,4 +162,19 @@ void Notepad::on_actionSelect_Font_2_triggered()
         ui->textEdit->setCurrentFont(font);
 }
 
+
+
+void Notepad::on_actionInfo_triggered()
+{
+    QMessageBox::StandardButton btn;
+    btn = QMessageBox::information(this,
+                                   tr("About MDI"),
+                                   tr("The Notepad exemple demonstrates "
+                                      "how to code a basic text editor "
+                                      "using QtWidgets"),
+                                   QMessageBox::Ok,
+                                   QMessageBox::NoButton);
+    if (btn == QMessageBox::Ok)
+        qDebug() << "OK";
+}
 

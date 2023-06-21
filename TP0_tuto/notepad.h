@@ -37,5 +37,6 @@ private slots:
     void on_actionItalic_triggered();
     void on_actionSelect_Font_2_triggered();
 
+    void on_actionInfo_triggered();
 };
 #endif // NOTEPAD_H

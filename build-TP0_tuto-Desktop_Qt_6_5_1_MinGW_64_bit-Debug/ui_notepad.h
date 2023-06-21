@@ -41,6 +41,7 @@ public:
     QAction *actionItalic;
     QAction *actionTESTTTTTT;
     QAction *actionSelect_Font_2;
+    QAction *actionInfo;
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QTextEdit *textEdit;
@@ -92,6 +93,8 @@ public:
         actionTESTTTTTT->setCheckable(true);
         actionSelect_Font_2 = new QAction(Notepad);
         actionSelect_Font_2->setObjectName("actionSelect_Font_2");
+        actionInfo = new QAction(Notepad);
+        actionInfo->setObjectName("actionInfo");
         centralwidget = new QWidget(Notepad);
         centralwidget->setObjectName("centralwidget");
         verticalLayout = new QVBoxLayout(centralwidget);
@@ -104,7 +107,7 @@ public:
         Notepad->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Notepad);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 22));
+        menubar->setGeometry(QRect(0, 0, 800, 25));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName("menuFile");
         menuEdit = new QMenu(menubar);
@@ -140,6 +143,7 @@ public:
         menuFont->addAction(actionBold);
         menuFont->addAction(actionUnderline);
         menuFont->addAction(actionItalic);
+        menuAbout->addAction(actionInfo);
 
         retranslateUi(Notepad);
 
@@ -186,6 +190,7 @@ public:
         actionItalic->setText(QCoreApplication::translate("Notepad", "Italic", nullptr));
         actionTESTTTTTT->setText(QCoreApplication::translate("Notepad", "TESTTTTTT", nullptr));
         actionSelect_Font_2->setText(QCoreApplication::translate("Notepad", "Select Font", nullptr));
+        actionInfo->setText(QCoreApplication::translate("Notepad", "Info", nullptr));
         menuFile->setTitle(QCoreApplication::translate("Notepad", "&File", nullptr));
         menuEdit->setTitle(QCoreApplication::translate("Notepad", "Edit", nullptr));
         menuFont->setTitle(QCoreApplication::translate("Notepad", "Font", nullptr));
