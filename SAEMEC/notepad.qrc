@@ -1,0 +1,26 @@
+<RCC>
+    <qresource prefix="/Icones">
+        <file>Img/bold.png</file>
+        <file>Img/copy.png</file>
+        <file>Img/create.png</file>
+        <file>Img/cut.png</file>
+        <file>Img/edit_redo.png</file>
+        <file>Img/edit_undo.png</file>
+        <file>Img/exit.png</file>
+        <file>Img/font.png</file>
+        <file>Img/info.png</file>
+        <file>Img/italic.png</file>
+        <file>Img/new.png</file>
+        <file>Img/open.png</file>
+        <file>Img/paste.png</file>
+        <file>Img/pencil.png</file>
+        <file>Img/print.png</file>
+        <file>Img/save.png</file>
+        <file>Img/save_as.png</file>
+        <file>Img/underline.png</file>
+        <file>Img/center-align.png</file>
+        <file>Img/justification.png</file>
+        <file>Img/left-align.png</file>
+        <file>Img/right-align.png</file>
+    </qresource>
+</RCC>
