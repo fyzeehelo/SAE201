@@ -1,8 +1,10 @@
-#include "notepad.h"
-#include "ui_notepad.h"
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QFontDialog>
+#include <QColorDialog>
+#include "notepad.h"
+#include "ui_notepad.h"
+
 
 Notepad::Notepad(QWidget *parent):
     QMainWindow(parent), ui(new Ui::Notepad)
@@ -113,6 +115,14 @@ void Notepad::on_actionRedo_triggered()
     ui->textEdit->redo();
 }
 
+void Notepad::on_actionColor_triggered()
+{
+    QColor col = QColorDialog::getColor(Qt::white, this, "Select a color");
+    QPalette pal = ui->textEdit->palette();
+    pal.setColor(QPalette::Text, col);
+    ui->textEdit->setPalette(pal);
+}
+
 void Notepad::on_actionBold_toggled(bool arg1)
 {
     if (ui->textEdit->fontWeight()== QFont::Bold)
@@ -143,4 +153,5 @@ void Notepad::on_actionSelect_Font_2_triggered()
     if (fontSelected)
         ui->textEdit->setCurrentFont(font);
 }
+
 
