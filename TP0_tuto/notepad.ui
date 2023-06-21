@@ -47,7 +47,7 @@
      <property name="title">
       <string>Font</string>
      </property>
-     <addaction name="actionSelect_Font_2"/>
+     <addaction name="actionSelect_Font"/>
      <addaction name="separator"/>
      <addaction name="actionBold"/>
      <addaction name="actionUnderline"/>
@@ -68,12 +68,53 @@
      <string>&amp;About</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuMise_en_page">
+    <property name="title">
+     <string>Mise en, page</string>
+    </property>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
+   <addaction name="menuMise_en_page"/>
    <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionUndo"/>
+   <addaction name="actionRedo"/>
+   <addaction name="separator"/>
+   <addaction name="actionOpen"/>
+   <addaction name="actionSave"/>
+   <addaction name="actionSave_as"/>
+   <addaction name="separator"/>
+   <addaction name="actionCopy"/>
+   <addaction name="actionCut"/>
+   <addaction name="actionPaste"/>
+   <addaction name="separator"/>
+   <addaction name="actionSelect_Font"/>
+   <addaction name="actionBold"/>
+   <addaction name="actionUnderline"/>
+   <addaction name="actionItalic"/>
+   <addaction name="separator"/>
+   <addaction name="actionAlign_Left"/>
+   <addaction name="actionAlign_Center"/>
+   <addaction name="actionAlign_Right"/>
+   <addaction name="actionAlign_Justify"/>
+  </widget>
   <action name="actionNew">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/new.png</normaloff>:/Icones/Img/new.png</iconset>
+   </property>
    <property name="text">
     <string>New</string>
    </property>
@@ -82,6 +123,10 @@
    </property>
   </action>
   <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/open.png</normaloff>:/Icones/Img/open.png</iconset>
+   </property>
    <property name="text">
     <string>Open</string>
    </property>
@@ -90,6 +135,10 @@
    </property>
   </action>
   <action name="actionSave">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/save.png</normaloff>:/Icones/Img/save.png</iconset>
+   </property>
    <property name="text">
     <string>Save</string>
    </property>
@@ -98,11 +147,19 @@
    </property>
   </action>
   <action name="actionSave_as">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/save_as.png</normaloff>:/Icones/Img/save_as.png</iconset>
+   </property>
    <property name="text">
     <string>Save as</string>
    </property>
   </action>
   <action name="actionExit">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/exit.png</normaloff>:/Icones/Img/exit.png</iconset>
+   </property>
    <property name="text">
     <string>Exit</string>
    </property>
@@ -112,20 +169,20 @@
     <string>Color</string>
    </property>
   </action>
-  <action name="actionCopy">
-   <property name="text">
-    <string>Copy</string>
-   </property>
-   <property name="shortcut">
-    <string>Ctrl+C</string>
-   </property>
-  </action>
   <action name="actionCut">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/cut.png</normaloff>:/Icones/Img/cut.png</iconset>
+   </property>
    <property name="text">
     <string>Cut</string>
    </property>
   </action>
   <action name="actionPaste">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/paste.png</normaloff>:/Icones/Img/paste.png</iconset>
+   </property>
    <property name="text">
     <string>Paste</string>
    </property>
@@ -134,6 +191,10 @@
    </property>
   </action>
   <action name="actionUndo">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/edit_undo.png</normaloff>:/Icones/Img/edit_undo.png</iconset>
+   </property>
    <property name="text">
     <string>Undo</string>
    </property>
@@ -142,6 +203,10 @@
    </property>
   </action>
   <action name="actionRedo">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/edit_redo.png</normaloff>:/Icones/Img/edit_redo.png</iconset>
+   </property>
    <property name="text">
     <string>Redo</string>
    </property>
@@ -153,40 +218,110 @@
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/bold.png</normaloff>:/Icones/Img/bold.png</iconset>
+   </property>
    <property name="text">
     <string>Bold</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
    </property>
   </action>
   <action name="actionUnderline">
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/underline.png</normaloff>:/Icones/Img/underline.png</iconset>
+   </property>
    <property name="text">
     <string>Underline</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
    </property>
   </action>
   <action name="actionItalic">
    <property name="checkable">
     <bool>true</bool>
    </property>
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/italic.png</normaloff>:/Icones/Img/italic.png</iconset>
+   </property>
    <property name="text">
     <string>Italic</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
   </action>
-  <action name="actionTESTTTTTT">
-   <property name="checkable">
-    <bool>true</bool>
+  <action name="actionCopy">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/copy.png</normaloff>:/Icones/Img/copy.png</iconset>
    </property>
    <property name="text">
-    <string>TESTTTTTT</string>
+    <string>Copy</string>
    </property>
   </action>
-  <action name="actionSelect_Font_2">
+  <action name="actionSelect_Font">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/font.png</normaloff>:/Icones/Img/font.png</iconset>
+   </property>
    <property name="text">
     <string>Select Font</string>
    </property>
   </action>
+  <action name="actionAlign_Left">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/left-align.png</normaloff>:/Icones/Img/left-align.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align Left</string>
+   </property>
+   <property name="toolTip">
+    <string>Align left</string>
+   </property>
+  </action>
+  <action name="actionAlign_Center">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/center-align.png</normaloff>:/Icones/Img/center-align.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align Center</string>
+   </property>
+  </action>
+  <action name="actionAlign_Right">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/right-align.png</normaloff>:/Icones/Img/right-align.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align Right</string>
+   </property>
+  </action>
+  <action name="actionAlign_Justify">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/justification.png</normaloff>:/Icones/Img/justification.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align Justify</string>
+   </property>
+   <property name="toolTip">
+    <string>Justify</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="notepad.qrc"/>
+ </resources>
  <connections/>
 </ui>

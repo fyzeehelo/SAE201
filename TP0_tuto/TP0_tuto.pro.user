@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 8.0.1, 2023-06-20T16:57:31. -->
+<!-- Written by QtCreator 8.0.1, 2023-06-21T10:00:27. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -235,8 +235,8 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:Z:/Documents/ZZZZZZ  SAE  201 ZZZZZZZ/TP0_tuto/TP0_tuto.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">Z:/Documents/ZZZZZZ  SAE  201 ZZZZZZZ/TP0_tuto/TP0_tuto.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration://iutbg-smbetu.univ-lyon1.fr/homes/Documents/ZZZZZZ__SAE__201__ZZZZZZZ/TP0_tuto/TP0_tuto.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">//iutbg-smbetu.univ-lyon1.fr/homes/Documents/ZZZZZZ__SAE__201__ZZZZZZZ/TP0_tuto/TP0_tuto.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>

@@ -136,11 +136,34 @@ void Notepad::on_actionItalic_triggered()
 
 
 
-void Notepad::on_actionSelect_Font_2_triggered()
+void Notepad::on_actionSelect_Font_triggered()
 {
     bool fontSelected;
     QFont font = QFontDialog::getFont(&fontSelected, this);
     if (fontSelected)
         ui->textEdit->setCurrentFont(font);
+}
+
+void Notepad::on_actionAlign_Left_triggered()
+{
+    ui->textEdit->setAlignment(Qt::AlignLeft);
+}
+
+
+void Notepad::on_actionAlign_Center_triggered()
+{
+    ui->textEdit->setAlignment(Qt::AlignCenter);
+}
+
+
+void Notepad::on_actionAlign_Right_triggered()
+{
+    ui->textEdit->setAlignment(Qt::AlignRight);
+}
+
+
+void Notepad::on_actionAlign_Justify_triggered()
+{
+    ui->textEdit->setAlignment(Qt::AlignJustify);
 }
 

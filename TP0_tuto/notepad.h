@@ -34,6 +34,10 @@ private slots:
     void on_actionBold_toggled(bool arg1);
     void on_actionUnderline_triggered();
     void on_actionItalic_triggered();
-    void on_actionSelect_Font_2_triggered();
+    void on_actionSelect_Font_triggered();
+    void on_actionAlign_Left_triggered();
+    void on_actionAlign_Center_triggered();
+    void on_actionAlign_Right_triggered();
+    void on_actionAlign_Justify_triggered();
 };
 #endif // NOTEPAD_H
