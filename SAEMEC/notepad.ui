@@ -45,12 +45,12 @@
      <rect>
       <x>90</x>
       <y>10</y>
-      <width>49</width>
+      <width>101</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>PseudoJoueur</string>
     </property>
    </widget>
    <widget class="QLabel" name="numeropage">
@@ -64,6 +64,130 @@
     </property>
     <property name="text">
      <string>Couverture</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="pageprec">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>50</y>
+      <width>62</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>50</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Page précedente</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>100</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Page suivante</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="pagesuiv">
+    <property name="geometry">
+     <rect>
+      <x>680</x>
+      <y>100</y>
+      <width>62</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="page_pred">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>500</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A définir</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="page_suiv">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>500</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A définir</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>130</y>
+      <width>281</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;BONUS / MALUS VIE:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Icones/Img/heart.png&quot; width=&quot;75&quot; height=&quot;63&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>230</y>
+      <width>281</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;BONUS / MALUS XP:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/Icones/Img/xp.png&quot; width=&quot;75&quot; height=&quot;63&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="bonushealth">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>230</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-100</number>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="bonusxp">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>330</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>-100</number>
     </property>
    </widget>
   </widget>
@@ -129,6 +253,7 @@
      <string>Insert</string>
     </property>
     <addaction name="actionImage"/>
+    <addaction name="actionPage"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -154,6 +279,7 @@
    <addaction name="actionOpen_Project"/>
    <addaction name="actionSave"/>
    <addaction name="actionSave_as"/>
+   <addaction name="actionPage"/>
    <addaction name="separator"/>
    <addaction name="actionCopy"/>
    <addaction name="actionCut"/>
@@ -411,6 +537,15 @@
    </property>
    <property name="text">
     <string>Font size</string>
+   </property>
+  </action>
+  <action name="actionPage">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/nouvellepage.png</normaloff>:/Icones/Img/nouvellepage.png</iconset>
+   </property>
+   <property name="text">
+    <string>Page</string>
    </property>
   </action>
  </widget>

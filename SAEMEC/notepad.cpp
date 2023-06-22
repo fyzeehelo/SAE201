@@ -9,6 +9,8 @@
 #include <QSpinBox>
 #include <QString>
 #include <QLayout>
+#include <string>
+#include <QPushButton>
 
 Notepad::Notepad(QWidget *parent, QString t, int npages, joueur *jo):
     QMainWindow(parent), livre(t,npages),j(jo->getNom()),ui(new Ui::Notepad)
@@ -21,13 +23,20 @@ Notepad::Notepad(QWidget *parent, QString t, int npages, joueur *jo):
         Page tempo(i);
         livre.addPage(tempo);
     }
+    //ui->bonusxp->setMaximum(100);
+    //ui->bonusxp->setMinimum(0);
+    //ui->bonushealth->setMaximum(100);
+    //ui->bonushealth->setMinimum(0);
+    ui->bonushealth->show();
+    ui->bonusxp->show();
 
-    ui->spinBox->setMaximum(livre.addFilesToPageList("Z:/C++/SAE/SAEMEC/livre1"));
+    //ui->spinBox->setMaximum(livre.addFilesToPageList("Z:/C++/SAE/SAEMEC/livre1"));
     ui->spinBox->setMinimum(0);
 
-    //    for (auto p : livre.listePages){
-    //        ui->comboBox->addItem(p.getPath());
-    //    }
+    //        for (auto p : livre.listePages){
+    //            ui->pagesuiv->addItem(p.getNPage());
+    //            ui->pageprec->addItem(p.getNPage());
+    //        }
 }
 
 Notepad::~Notepad()
@@ -62,16 +71,7 @@ void Notepad::on_actionOpen_triggered()
 void Notepad::on_actionSave_triggered()
 {
     if (currentFile.isEmpty()) {
-        QString fileName = QFileDialog::getSaveFileName(this, "Save your file as");
-        QFile file(fileName);
-        if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-            return;
-
-        currentFile =  fileName;
-        setWindowTitle(currentFile);
-        QTextStream out(&file);
-        out << ui->textEdit->toPlainText();
-        file.close();
+        on_actionSave_as_triggered();
     }
     else {
         QFile file(currentFile);
@@ -86,20 +86,77 @@ void Notepad::on_actionSave_triggered()
 
 void Notepad::on_actionSave_as_triggered()
 {
-    QString fileName = QFileDialog::getSaveFileName(this,
-                                                    tr("Save your file as"),
-                                                    R"(Z:\C++\SAE\SAEMEC)",
-                                                    tr("Text files (*.txt);;HTML files (*html)"));
-    QFile file(fileName);
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
-        return;
+    QString fileName;
+    QMessageBox msgBox;
+    msgBox.setText(tr("You want to save your work in Plain/Text or HTML ?"));
 
-    currentFile =  fileName;
-    setWindowTitle(currentFile);
-    QTextStream out(&file);
-    out << ui->textEdit->toPlainText();
-    file.close();
+    QAbstractButton* htmlButton = msgBox.addButton(tr("HTML"), QMessageBox::NoRole);
+    QAbstractButton* textButton = msgBox.addButton(tr("TEXT"), QMessageBox::NoRole);
+    msgBox.addButton(QMessageBox::Cancel);
+    msgBox.setIcon(QMessageBox::Question);
+    msgBox.exec();
+    if (msgBox.clickedButton() == htmlButton) {
+        fileName = QFileDialog::getSaveFileName(this,
+                                                tr("Save your file as"),
+                                                R"(Z:\C++\SAE\SAEMEC)",
+                                                tr("HTML files (*html)"));
+        QFile file(fileName);
+        if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+            return;
+        currentFile =  fileName;
+        setWindowTitle(currentFile);
+        QString htmlContent;
+        htmlContent = R"(
+            <!DOCTYPE html>
+            <html lang="fr">
+                <head><title>%1</title></head>
+                <body style="text-align:center;">
+                    <h1>%2</h1>
+                    <h2>%3</h2>
+                    %4
+                    <a href="%5"><button>Choix 1</button></a>
+                    <a href="%6"><button>Choix 2</button></a>
+                </body>
+            </html>
+        )";
+        QString str = ui->textEdit->toPlainText();
+        QString title, img;
+        QString content = "";
+        QStringList lines_lst = str.split("\n");
 
+        for (int i = 0; i < lines_lst.length(); i++) {
+            QString line = lines_lst.value(i);
+            if (i == 0)
+                title = line;
+            else if (line.mid(0, 4).compare("<img") == 0)
+                img = line;
+            else
+                content += line + "<br>";
+        }
+        htmlContent = htmlContent.arg(currentFile, title, content, img.compare("")!=0?img:"");
+
+        QTextStream out(&file);
+
+        qDebug() << str;
+        out << htmlContent;
+        file.close();
+
+    } else if (msgBox.clickedButton() == textButton) {
+        fileName = QFileDialog::getSaveFileName(this,
+                                                tr("Save your file as"),
+                                                R"(Z:\C++\SAE\SAEMEC)",
+                                                tr("Text files (*.txt)"));
+        QFile file(fileName);
+        if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+            return;
+
+        currentFile =  fileName;
+        setWindowTitle(currentFile);
+
+        QTextStream out(&file);
+        out << ui->textEdit->toPlainText();
+        file.close();
+    }
 }
 
 void Notepad::on_actionExit_triggered()
@@ -228,8 +285,16 @@ void Notepad::on_spinBox_textChanged(const QString &arg1)
 
 void Notepad::on_actionOpen_Project_triggered()
 {
-    // DEMANDER DE CHOISIR UN DOSSIER
-    livre.addFilesToPageList("Z:/C++/SAE/SAEMEC/livre1");
+    QDir dir = QFileDialog::getExistingDirectory(this, "Directory", QString());
+    ui->spinBox->setMaximum(livre.addFilesToPageList(dir.absolutePath().toStdString()));
+    ui->spinBox->setMinimum(0);
+
+    ui->pagesuiv->clear();
+    ui->pageprec->clear();
+    for (auto p : livre.listePages){
+        ui->pagesuiv->addItem(p.getNPage());
+        ui->pageprec->addItem(p.getNPage());
+    }
 }
 
 
@@ -239,7 +304,7 @@ void Notepad::on_actionImage_triggered()
     if (!filePath.isEmpty()){
         QImage image(filePath);
         if (!image.isNull()){
-            ui->textEdit->textCursor().insertImage(filePath);
+            ui->textEdit->textCursor().insertText("<img src ='"+filePath+"' alt='image'>");
             // alternative plus "détailée"
             //            QTextImageFormat imageFormat;
             //            imageFormat.setName(filePath);
@@ -275,7 +340,6 @@ void Notepad::on_actionFont_size_triggered()
     if (msgBox.layout()!=nullptr){
         qDebug() << msgBox.layout();
         msgBox.layout()->addWidget(b);
-        // METTRE LABEL ET ASSOCIER LES 2 OU  REDIMMENSIONNER
     }
     msgBox.setText("Select a font size");
     msgBox.exec();
@@ -284,3 +348,55 @@ void Notepad::on_actionFont_size_triggered()
     delete b;
     ui->textEdit->setFontPointSize(value);
 }
+
+void Notepad::on_pagesuiv_currentIndexChanged(int index)
+{
+    Page pageActuelle = livre.getPage(j.getCurrentPage()+1);
+    pageActuelle.setNumeroPageSucc(index+1);
+    ui->page_suiv->setText(to_string(livre.getPage(j.getCurrentPage()+1).getNumeroPageSucc()).c_str());
+    ui->page_suiv->show();
+}
+
+
+void Notepad::on_pageprec_currentIndexChanged(int index)
+{
+    Page pageActuelle = livre.getPage(j.getCurrentPage()+1);
+    pageActuelle.setNumeroPagePred(index+1);
+    ui->page_pred->setText(to_string(livre.getPage(j.getCurrentPage()+1).getNumeroPageSucc()).c_str());
+    ui->page_pred->show();
+}
+
+void Notepad::on_actionPage_triggered()
+{
+    Page newPage(livre.getNbPages()+1);
+    livre.addPage(newPage);
+    ui->spinBox->setMaximum(ui->spinBox->maximum()+1);
+    ui->spinBox->setMinimum(0);
+    ui->pagesuiv->addItem(to_string(ui->spinBox->maximum()+1).c_str());
+    ui->pageprec->addItem(to_string(ui->spinBox->maximum()+1).c_str());
+
+}
+
+
+void Notepad::on_bonushealth_valueChanged(int arg1)
+{
+    Page newPage =livre.getPage(j.getCurrentPage()+1);
+    newPage.setModifPV(arg1);
+    if(j.mort()){
+        QMessageBox popup;
+        popup.setWindowTitle("JOUEUR MORT");
+        popup.setText("Le joueur est mort");
+        popup.setInformativeText("Fin du jeu");
+        popup.setStandardButtons(QMessageBox::Yes);
+        popup.exec();
+        close();
+    }
+}
+
+
+void Notepad::on_bonusxp_valueChanged(int arg1)
+{
+    Page newPage =livre.getPage(j.getCurrentPage()+1);
+    newPage.setModifXP(arg1);
+}
+

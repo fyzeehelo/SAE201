@@ -25,5 +25,9 @@
         <file>Img/open file.PNG</file>
         <file>Img/image.png</file>
         <file>Img/font-size.png</file>
+        <file>Img/nouvellepage.png</file>
+        <file>Img/heart.png</file>
+        <file>Img/Thumbs.db</file>
+        <file>Img/xp.png</file>
     </qresource>
 </RCC>

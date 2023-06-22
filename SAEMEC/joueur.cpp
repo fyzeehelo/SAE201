@@ -55,3 +55,10 @@ void joueur::setCurrentPage(Page p){
     this->modifPV(p.getModifPV());
     this->modifXP(p.getModifXP());
 }
+
+bool joueur::mort(){
+    if(nbPV<=0){
+        return true;
+    }
+    return false;
+}

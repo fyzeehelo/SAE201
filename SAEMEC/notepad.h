@@ -48,5 +48,10 @@ private slots:
     void on_actionOpen_Project_triggered();
     void on_actionImage_triggered();
     void on_actionFont_size_triggered();
+    void on_pagesuiv_currentIndexChanged(int index);
+    void on_pageprec_currentIndexChanged(int index);
+    void on_actionPage_triggered();
+    void on_bonushealth_valueChanged(int arg1);
+    void on_bonusxp_valueChanged(int arg1);
 };
 #endif // NOTEPAD_H

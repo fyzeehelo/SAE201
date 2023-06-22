@@ -29,6 +29,7 @@ public:
 
     void modifPV(int n);
     void modifXP(int n);
+    bool mort();
 };
 
 #endif // JOUEUR_H

@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <QString>
+#include <string>
+
 using namespace std;
 
 class Page
@@ -44,7 +46,8 @@ public:
 
     bool pageExiste();
     void setPath(QString s){path = s;}
-    QString getPath(){return path;}
+    string getPath(){return path.toStdString();}
+    QString getNPage(){return to_string(nbpage+1).c_str();};
 
 private:
     int nbpage;
