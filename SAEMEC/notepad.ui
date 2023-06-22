@@ -14,11 +14,58 @@
    <string>Notepad</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QTextEdit" name="textEdit"/>
-    </item>
-   </layout>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>37</y>
+      <width>531</width>
+      <height>481</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>782</width>
+      <height>16777215</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="pseudojoueur">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>10</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="numeropage">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>490</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Couverture</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -35,6 +82,7 @@
     </property>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
+    <addaction name="actionOpen_Project"/>
     <addaction name="actionSave"/>
     <addaction name="actionSave_as"/>
     <addaction name="actionExit"/>
@@ -52,6 +100,8 @@
      <addaction name="actionBold"/>
      <addaction name="actionUnderline"/>
      <addaction name="actionItalic"/>
+     <addaction name="separator"/>
+     <addaction name="actionFont_size"/>
     </widget>
     <addaction name="actionColor"/>
     <addaction name="menuFont"/>
@@ -74,8 +124,15 @@
      <string>Mise en page</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuInsert">
+    <property name="title">
+     <string>Insert</string>
+    </property>
+    <addaction name="actionImage"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
+   <addaction name="menuInsert"/>
    <addaction name="menuMise_en_page"/>
    <addaction name="menuAbout"/>
   </widget>
@@ -94,6 +151,7 @@
    <addaction name="actionRedo"/>
    <addaction name="separator"/>
    <addaction name="actionOpen"/>
+   <addaction name="actionOpen_Project"/>
    <addaction name="actionSave"/>
    <addaction name="actionSave_as"/>
    <addaction name="separator"/>
@@ -102,6 +160,7 @@
    <addaction name="actionPaste"/>
    <addaction name="separator"/>
    <addaction name="actionSelect_Font"/>
+   <addaction name="actionFont_size"/>
    <addaction name="actionBold"/>
    <addaction name="actionUnderline"/>
    <addaction name="actionItalic"/>
@@ -110,6 +169,8 @@
    <addaction name="actionAlign_Center"/>
    <addaction name="actionAlign_Right"/>
    <addaction name="actionAlign_Justify"/>
+   <addaction name="separator"/>
+   <addaction name="actionImage"/>
   </widget>
   <action name="actionNew">
    <property name="icon">
@@ -126,7 +187,7 @@
   <action name="actionOpen">
    <property name="icon">
     <iconset resource="notepad.qrc">
-     <normaloff>:/Icones/Img/open.png</normaloff>:/Icones/Img/open.png</iconset>
+     <normaloff>:/Icones/Img/open file.PNG</normaloff>:/Icones/Img/open file.PNG</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -323,6 +384,33 @@
   <action name="actionInfo">
    <property name="text">
     <string>Info</string>
+   </property>
+  </action>
+  <action name="actionImage">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/image.png</normaloff>:/Icones/Img/image.png</iconset>
+   </property>
+   <property name="text">
+    <string>Image</string>
+   </property>
+  </action>
+  <action name="actionOpen_Project">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/open.png</normaloff>:/Icones/Img/open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open Project</string>
+   </property>
+  </action>
+  <action name="actionFont_size">
+   <property name="icon">
+    <iconset resource="notepad.qrc">
+     <normaloff>:/Icones/Img/font-size.png</normaloff>:/Icones/Img/font-size.png</iconset>
+   </property>
+   <property name="text">
+    <string>Font size</string>
    </property>
   </action>
  </widget>

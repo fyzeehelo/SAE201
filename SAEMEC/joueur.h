@@ -15,6 +15,7 @@ public:
     Page currentPage=0;
 
     joueur(QString n){nom=n;cout<<"+[Joueur]"<<endl;};
+    joueur(){cout<<"+[Joueur]"<<endl;};
 
     const QString &getNom() const;
     void setNom(const QString &newNom);
@@ -24,6 +25,7 @@ public:
     void setNbXP(int newNbXP);
     void setCurrentPage(Page p);
     int getCurrentPage();
+    string getCurrentPageQString();
 
     void modifPV(int n);
     void modifXP(int n);

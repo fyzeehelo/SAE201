@@ -22,5 +22,8 @@
         <file>Img/justification.png</file>
         <file>Img/left-align.png</file>
         <file>Img/right-align.png</file>
+        <file>Img/open file.PNG</file>
+        <file>Img/image.png</file>
+        <file>Img/font-size.png</file>
     </qresource>
 </RCC>

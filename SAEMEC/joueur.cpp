@@ -1,5 +1,5 @@
 #include "joueur.h"
-
+#include <string>
 
 const QString &joueur::getNom() const
 {
@@ -34,6 +34,11 @@ void joueur::setNbXP(int newNbXP)
 int joueur::getCurrentPage(){
     return currentPage.getNbpage();
 }
+
+string joueur::getCurrentPageQString(){
+    return to_string(currentPage.getNbpage()+2);
+}
+
 
 void joueur::modifPV(int n){
     int newPV = this->nbPV+n;

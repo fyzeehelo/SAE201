@@ -66,4 +66,10 @@ void Page::setModifXP(int newModifXP)
     modifXP = newModifXP;
 }
 
+bool Page::pageExiste(){
+    if (getTexte()!=""){
+        return true;
+    }
+    return false;
+}
 

@@ -42,6 +42,10 @@ public:
     int getModifXP() const;
     void setModifXP(int newModifXP);
 
+    bool pageExiste();
+    void setPath(QString s){path = s;}
+    QString getPath(){return path;}
+
 private:
     int nbpage;
     QString texte;
@@ -49,6 +53,7 @@ private:
     int numeroPageSucc;
     int modifPV;
     int modifXP;
+    QString path;
 };
 
 #endif // PAGE_H

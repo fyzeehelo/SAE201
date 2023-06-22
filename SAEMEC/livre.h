@@ -1,7 +1,11 @@
 #ifndef LIVRE_H
 #define LIVRE_H
 #include <QList>
+#include <QString>
 #include <iostream>
+#include <filesystem>
+#include <fstream>
+#include <sstream>
 #include "page.h"
 using namespace std;
 
@@ -23,6 +27,9 @@ public:
 
     void addPage(Page newPage);
     Page getPage(int n);
+
+    //void loadBook(const string& folderPath);
+    int addFilesToPageList(const string& folderPath);
 private:
     QString titre;
     int nbPages;
